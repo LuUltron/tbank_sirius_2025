@@ -95,5 +95,4 @@ python scripts/validate.py
 ## 📧 Контакты
 
 Для вопросов и предложений:
-    Email: your-email@example.com
-    Issues: GitHub Issues
+    Email: da9d8a8a72eb@mail.ru
