@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  tbank-detector:
+    build: .  # Сборка из текущей директории
+    ports:
+      - "8000:8000"  # Проброс порта
+    volumes:
+      - ./weights:/app/weights  # Монтирование директории с весами
+      - ./data:/app/data        # Монтирование директории с данными
+    environment:
+      - PYTHONPATH=/app  # Путь для импорта Python модулей
+    restart: unless-stopped  # Автоматический перезапуск
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia  # Использование NVIDIA GPU
+              count: 1        # Одна видеокарта
+              capabilities: [gpu]  # Возможности GPU
